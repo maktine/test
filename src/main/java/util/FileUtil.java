@@ -6,24 +6,6 @@ import java.io.*;
  * 文件工具类
  */
 public class FileUtil {
-	/*//将文档中的内容转化为String类型
-    public static String input(File file){
-        StringBuilder result = new StringBuilder();
-        try{
-            // BufferedReader类读取文件
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String s = null;
-            while ((s = reader.readLine())!= null){
-                result.append(System.lineSeparator() + s);
-            }
-            System.out.println(result);
-            reader.close();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return result.toString();
-    }
-*/
 	public static String readFile(File file) { 
 		 // 1.创建字符输入流对象与结果字符串容器 
 		 Reader reader = null; 
@@ -32,11 +14,11 @@ public class FileUtil {
 		 reader = new FileReader(file); 
 		 builder = new StringBuilder(); 
 		 // 2.定义字符数组 
-		 char[] chs = new char[1024]; 
+		 char[] ch = new char[1024]; 
 		 // 定义一个变量，记录读到的有效字符数. 
 		 int len; 
-		 while((len = reader.read(chs)) != -1) { 
-		 String s = new String(chs, 0, len); 
+		 while((len = reader.read(ch)) != -1) { 
+		 String s = new String(ch, 0, len); 
 		 builder.append(s); 
 		 } 
 		 } catch (IOException e) { 
